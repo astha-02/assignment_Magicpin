@@ -4,11 +4,13 @@ using namespace std;
 void validate(string s)
 {
     int l=s.length();
+    /* Checking if password length is less than 6*/
     if(l < 6)
     {
         cout<<"Failure Password must be at least 6 characters long.";
         return;
     }
+    /* Checking if password length is greater than 12*/
     else if(l > 12)
     {
         cout<<"Failure Password must be at max 12 characters long.";
@@ -37,11 +39,13 @@ void validate(string s)
             return;
         }
 
+        /* Check for a valid password */
         if(lower_case >0 && upper_case>0 && number>0 && special_character>0)
         {
             cout<<"Success";
             return;
         }
+        /*Checking for which case password is invalid*/
         else
         {
             if(lower_case==0) cout<<"Password must contain at least one letter from a-z.";
@@ -57,6 +61,7 @@ int main()
 {
     string input;
     cin>>input;
+
     string s="";
     for(int i=0; i<input.length(); i++)
     {
@@ -64,6 +69,7 @@ int main()
         {
             if(s.length()>0)
             {
+                /* Seaparating password over commas, and then checking for validity*/
                 validate(s);
                 cout<<endl;
                 s="";
