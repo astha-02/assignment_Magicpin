@@ -7,13 +7,13 @@ void validate(string s)
     /* Checking if password length is less than 6*/
     if(l < 6)
     {
-        cout<<"Failure Password must be at least 6 characters long.";
+        cout<<s<<" Failure Password must be at least 6 characters long.";
         return;
     }
     /* Checking if password length is greater than 12*/
     else if(l > 12)
     {
-        cout<<"Failure Password must be at max 12 characters long.";
+        cout<<s<<" Failure Password must be at max 12 characters long.";
         return;
     }
     else
@@ -35,23 +35,23 @@ void validate(string s)
 
         if(flag)
         {
-            cout<<"Password cannot contain %!)(.";
+            cout<<s<<" Password cannot contain %!)(.";
             return;
         }
 
         /* Check for a valid password */
         if(lower_case >0 && upper_case>0 && number>0 && special_character>0)
         {
-            cout<<"Success";
+            cout<<s<<" Success";
             return;
         }
         /*Checking for which case password is invalid*/
         else
         {
-            if(lower_case==0) cout<<"Password must contain at least one letter from a-z.";
-            else if(upper_case==0) cout<<"Password must contain at least one letter from A-Z.";
-            else if(number==0) cout<<"Password must contain at least one letter from 0-9.";
-            else cout<<"Password must contain at least one letter from *$_#=@.";
+            if(lower_case==0) cout<<s<<" Password must contain at least one letter from a-z.";
+            else if(upper_case==0) cout<<s<<" Password must contain at least one letter from A-Z.";
+            else if(number==0) cout<<s<<" Password must contain at least one letter from 0-9.";
+            else cout<<s<<" Password must contain at least one letter from *$_#=@.";
             return;
         }
     }
@@ -60,7 +60,7 @@ void validate(string s)
 int main()
 {
     string input;
-    cin>>input;
+    getline(cin,input);
 
     string s="";
     for(int i=0; i<input.length(); i++)
